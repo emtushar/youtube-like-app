@@ -19,5 +19,5 @@ export function usePopularVideos() {
   };
   useEffect(() => {
     fetchMostPopularVideos();
-  }, []);
+  });
 }

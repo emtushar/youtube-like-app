@@ -19,5 +19,5 @@ export function useLiveVideos() {
   };
   useEffect(() => {
     fetchLiveVideos();
-  }, []);
+  });
 }

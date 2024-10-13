@@ -13,7 +13,7 @@ function LiveChat() {
         addMessage({ name: generateRandomName(), text: generateRandomText(13) })
       );
     }, 1000);
-  }, []);
+  });
   const messages = useSelector((state) => state.livechat.messages);
   return (
     <div className="py-2 bg-white rounded-lg    border-2 border-gray-400  overflow-y-auto overflow-x-hidden rounded-b-none hidden md:flex md:flex-col-reverse  min-h-64 max-h-64">
