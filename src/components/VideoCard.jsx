@@ -6,9 +6,9 @@ function VideoCard({ channelName, title, thumbnail, viewsCount, publishedAt }) {
   const { isMenuOpen } = useSelector((state) => state.app);
   return (
     <div
-      className={
-        isMenuOpen ? "md:w-[440px] " : "md:w-96 " + "bg-white rounded-lg "
-      }
+      className={`${
+        isMenuOpen ? "md:w-[440px] " : "md:w-96 "
+      } bg-white rounded-lg `}
     >
       <img
         className="w-screen rounded-lg "

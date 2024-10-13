@@ -3,28 +3,28 @@ import {
   addSearchResults,
   clearSearchResults,
 } from "../store/slices/videoSlice";
-import { useEffect } from "react";
+import { useEffect, useCallback } from "react";
 
 export function useSearchResults(searchQuery) {
   const dispatch = useDispatch();
-  async function getSearchResult() {
+
+  const getSearchResult = useCallback(async () => {
     try {
       console.log(searchQuery);
       const data = await fetch(
-        process.env.REACT_APP_BACKEND_URL +
-          "/api/fetch/search-results/" +
-          searchQuery
+        `${process.env.REACT_APP_BACKEND_URL}/api/fetch/search-results/${searchQuery}`
       );
       const response = await data.json();
       dispatch(addSearchResults(response.items));
     } catch (error) {
       console.log(error);
     }
-  }
+  }, [searchQuery, dispatch]);
+
   useEffect(() => {
     getSearchResult();
     return () => {
       dispatch(clearSearchResults());
     };
-  }, [searchQuery]);
+  }, [getSearchResult, dispatch]);
 }

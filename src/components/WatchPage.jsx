@@ -1,31 +1,34 @@
-import React, { useEffect, useState } from "react";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import React, { useEffect, useState, useCallback } from "react";
+import { useSearchParams } from "react-router-dom";
 import { closeMenu } from "../store/slices/appSlice";
 import { useDispatch } from "react-redux";
 import Recommandation from "./Recommandation";
+
 function WatchPage() {
   const [searchParams] = useSearchParams();
   const [toSearch, setToSearch] = useState(" ");
   const dispatch = useDispatch();
-  const navigate = useNavigate();
-  dispatch(closeMenu());
-  async function getVideoTitle() {
+
+  useEffect(() => {
+    dispatch(closeMenu());
+  }, [dispatch]);
+
+  const getVideoTitle = useCallback(async () => {
     try {
       const data = await fetch(
-        process.env.REACT_APP_BACKEND_URL +
-          "/api/fetch/video-by-id/" +
-          searchParams.get("v")
+        `${
+          process.env.REACT_APP_BACKEND_URL
+        }/api/fetch/video-by-id/${searchParams.get("v")}`
       );
       const response = await data.json();
       const title = response?.items[0]?.snippet?.title || "";
       setToSearch(title);
-    } catch (error) {
-      navigate("/error");
-    }
-  }
+    } catch (error) {}
+  }, [searchParams]);
+
   useEffect(() => {
     getVideoTitle();
-  }, [searchParams]);
+  }, [getVideoTitle]);
   return (
     <div className="md:p-8 p-2 bg-white w-full flex flex-col">
       <div className="flex md:flex-row flex-col w-full  overflow-y-auto overflow-x-hidden">
