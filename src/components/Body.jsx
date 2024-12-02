@@ -10,7 +10,7 @@ function Body() {
     <div className=" flex flex-col w-full h-screen overflow-hidden">
       <Header />
       <div className="flex  flex-1 bg-red-900 w-full overflow-hidden">
-        {isMenuOpen && <SideBar />}
+        {isMenuOpen ? <SideBar /> : null}
         <Outlet />
       </div>
     </div>

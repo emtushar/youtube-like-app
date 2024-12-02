@@ -30,12 +30,12 @@ function WatchPage() {
     getVideoTitle();
   }, [getVideoTitle]);
   return (
-    <div className="md:p-8 p-2 bg-white w-full flex flex-col">
-      <div className="flex md:flex-row flex-col w-full  overflow-y-auto overflow-x-hidden">
+    <div className="lg:p-8 p-2 bg-white w-full flex flex-col">
+      <div className="flex lg:flex-row flex-col w-full  overflow-y-auto overflow-x-hidden">
         <div className="flex ">
           <iframe
             className={
-              "md:mr-8 md:ml-16  rounded-lg w-full h-[280px] md:w-[950px] md:h-[550px]"
+              "lg:mr-8 lg:ml-16  rounded-lg w-full h-[280px] lg:w-[950px] lg:h-[550px]"
             }
             src={"https://www.youtube.com/embed/" + searchParams.get("v")}
             title="YouTube video player"

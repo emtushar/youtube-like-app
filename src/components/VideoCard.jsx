@@ -7,7 +7,7 @@ function VideoCard({ channelName, title, thumbnail, viewsCount, publishedAt }) {
   return (
     <div
       className={`${
-        isMenuOpen ? "md:w-[440px] " : "md:w-96 "
+        isMenuOpen ? "lg:w-[410px] " : "lg:w-96 "
       } bg-white rounded-lg `}
     >
       <img
@@ -18,18 +18,18 @@ function VideoCard({ channelName, title, thumbnail, viewsCount, publishedAt }) {
 
       <div className="p-1 flex gap-3 mt-4">
         <img
-          className="h-6 w-6 md:h-8 md:w-8"
+          className="h-6 w-6 lg:h-8 lg:w-8"
           src="https://banner2.cleanpng.com/20180404/sqe/avhxkafxo.webp"
           alt="channel-thumbnail"
         />
         <div>
-          <h2 className="md:text-base text-sm font-medium">{title}</h2>
-          <p className="text-gray-600 md:text-base text-sm">{channelName}</p>
+          <h2 className="lg:text-base text-sm font-medium">{title}</h2>
+          <p className="text-gray-600 lg:text-base text-sm">{channelName}</p>
           <div className="flex gap-2 items-center">
-            <span className="md:text-base text-sm ">
+            <span className="lg:text-base text-sm ">
               {isNaN(viewsCount) ? viewsCount : aveta(viewsCount) + " views"}
             </span>
-            <span className="md:text-base text-sm">{timeAgo(publishedAt)}</span>
+            <span className="lg:text-base text-sm">{timeAgo(publishedAt)}</span>
           </div>
         </div>
       </div>

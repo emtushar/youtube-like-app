@@ -19,10 +19,10 @@ function WatchLivePage() {
     chatMsg.current.value = "";
   }
   return (
-    <div className="md:p-8 p-2 bg-white w-full md:flex-row flex-col flex  overflow-y-auto">
+    <div className="lg:p-8 p-2 bg-white w-full lg:flex-row flex-col flex  overflow-y-auto">
       <div className="  flex ">
         <iframe
-          className=" md:mr-8 md:ml-16 rounded-lg w-full h-[280px] md:w-[950px] md:h-[550px] "
+          className=" lg:mr-8 lg:ml-16 rounded-lg w-full h-[280px] lg:w-[950px] lg:h-[550px] "
           width="950"
           height="550"
           src={"https://www.youtube.com/embed/" + searchParams.get("v")}
@@ -36,7 +36,7 @@ function WatchLivePage() {
       <div className="flex flex-col  overflow-y-auto overflow-x-hidden  ">
         <LiveChat />
         <form
-          className="md:flex hidden p-2 px-6 border-2  border-t-0 border-gray-400 rounded-lg rounded-t-none"
+          className="lg:flex hidden p-2 px-6 border-2  border-t-0 border-gray-400 rounded-lg rounded-t-none"
           onSubmit={(e) => e.preventDefault()}
         >
           <input

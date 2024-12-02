@@ -19,7 +19,7 @@ function LiveChat() {
   });
   const messages = useSelector((state) => state.livechat.messages);
   return (
-    <div className="py-2 bg-white rounded-lg    border-2 border-gray-400  overflow-y-auto overflow-x-hidden rounded-b-none hidden md:flex md:flex-col-reverse  min-h-64 max-h-64">
+    <div className="py-2 bg-white rounded-lg    border-2 border-gray-400  overflow-y-auto overflow-x-hidden rounded-b-none hidden lg:flex lg:flex-col-reverse  min-h-64 max-h-64">
       {messages &&
         messages.map((m) => (
           <ChatCard key={id} username={m.name} text={m.text} />

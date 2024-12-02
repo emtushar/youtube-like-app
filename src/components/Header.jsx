@@ -25,24 +25,24 @@ function Header() {
     <div className="w-full p-2 px-8  shadow-lg flex  items-center justify-between ">
       <div className="flex gap-5 items-center">
         <img
-          className="md:h-4 md:w-6 h-4 w-4 cursor-pointer "
+          className="lg:h-4 lg:w-6 h-4 w-4 cursor-pointer "
           src="https://e7.pngegg.com/pngimages/436/707/png-clipart-hamburger-button-computer-icons-menu-menu-food-text-thumbnail.png"
           alt="hamburger-icon"
           onClick={toggleMenuState}
         />
         <Link to={"/"}>
           <img
-            className="hidden md:block h-6 w-28  cursor-pointer"
+            className="hidden lg:block h-6 w-28  cursor-pointer"
             src="https://freelogopng.com/images/all_img/1656501255youtube-logo-png.png"
             alt="youtube-logo"
           />
         </Link>
       </div>
 
-      <div className="flex flex-col w-[70%]  md:w-[40%]  ">
+      <div className="flex flex-col w-[70%]  lg:w-[40%]  ">
         <div className=" flex items-center">
           <input
-            className="border-2 border-gray-300 text-sm md:text-base  p-1 px-3  md:p-3 md:px-5 rounded-l-full  w-full "
+            className="border-2 border-gray-300 text-sm lg:text-base  p-1 px-3  lg:p-3 md:px-5 rounded-l-full  w-full "
             type="text"
             name=""
             id=""
@@ -58,7 +58,7 @@ function Header() {
           />
           <button
             onClick={handleSearchClick}
-            className="p-1 px-3  md:p-3 md:px-5 border-2 border-gray-300 border-l-0 bg-gray-200 rounded-r-full"
+            className="p-1 px-3  lg:p-3 lg:px-5 border-2 border-gray-300 border-l-0 bg-gray-200 rounded-r-full"
           >
             <img
               className="md:w-6 md:h-6 h-5 w-5"

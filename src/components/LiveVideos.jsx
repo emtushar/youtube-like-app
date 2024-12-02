@@ -9,7 +9,7 @@ function LiveVideos() {
   const id = useId();
   const liveVideos = useSelector((state) => state.video.liveVideos);
   return (
-    <div className="w-full md:p-10 p-2 bg-white flex flex-wrap gap-4 overflow-y-auto">
+    <div className="w-full lg:p-10 p-2 bg-white flex flex-wrap gap-4 overflow-y-auto">
       {liveVideos
         ? liveVideos.map((v) => (
             <Link key={v?.id + id} to={"/watch-live?v=" + v.id.videoId}>
